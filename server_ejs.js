@@ -8,6 +8,11 @@ let app = express();
 // Setup server port
 var port = process.env.PORT || 8080;
 
+// render home page
+app.get('/', function (req, res) {
+    res.render('home.ejs');
+})
+
 // Use template
 app.get('/compter/:nombre', function(req, res) {
     var noms = ['Robert', 'Jacques', 'David'];
