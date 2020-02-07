@@ -1,0 +1,9 @@
+<ul>
+<% for(let i = 0; i < listname.length ; i++ ) { %>
+<li><%= listname[i] %></li>
+<% } %>
+</ul>
+<form method="POST" action="/add">
+    Noms :    <input type="text" name="new_name">
+    <input type="submit" value="Sauver" name="save">
+</form> 
