@@ -8,7 +8,9 @@ let app = express();
 var port = 8000;
 
 // Send message for default URL
-app.get('/', (req, res) => res.send('Hello World !'));
+app.get('/', (req, res) => {
+    res.send('Hello World !');
+});
 
 // Launch app to listen to specified port
 app.listen(port, function () {

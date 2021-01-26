@@ -1,3 +1,5 @@
+var http = require('http');
+var https = require('https');
 // Import express
 let express = require('express');
 
@@ -5,10 +7,10 @@ let express = require('express');
 let app = express();
 
 // Setup server port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8000;
 
 let session = require('express-session');
-app.use(session({
+app.use(session({
 	secret: 'my secret',
 	resave: false,
 	saveUninitialized: true

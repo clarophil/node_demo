@@ -8,10 +8,23 @@ let app = express();
 // Setup server port
 var port = process.env.PORT || 8080;
 
-// render home page
-app.get('/', function (req, res) {
-    res.render('home.ejs');
-})
+// Set route
+app.get('/', (request, response) => {
+    // response.send("Hello world");
+    response.render('home.ejs', {name: "Paul"});
+});
+
+// using url
+app.get('/index', (request, response) => {
+    // response.send('Bonjour ' + request.query.name);
+    response.render('home.ejs', {name: request.query.name});
+});
+
+// using param
+app.get('/index/:name', (request, response) => {
+    // response.send('Bonjour ' + request.params.name);
+    response.render('home.ejs', {name: request.params.name});
+});
 
 // Use template
 app.get('/compter/:nombre?', function(req, res) {
@@ -19,6 +32,9 @@ app.get('/compter/:nombre?', function(req, res) {
     res.render('page.ejs', {compteur: req.params.nombre, noms: noms});
 
 });
+
+//setting middleware
+app.use(express.static('public')); 
 
 // Manage bad route
 app.use(function(req, res, next){

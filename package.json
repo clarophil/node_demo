@@ -17,5 +17,8 @@
     "save": "^2.4.0",
     "session-file-store": "^1.4.0",
     "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "cypress": "^4.9.0"
   }
 }
