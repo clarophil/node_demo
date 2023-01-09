@@ -9,7 +9,7 @@ var port = process.env.PORT || 8000;
 
 // Send message for default URL
 app.get('/', (req, res) => {
-    res.send('<h1>Hello World !</h1><br><a href="/index?name=toto" >Pretty request</a></h1><br><a href="/index/name/toto" >Query request</a>');
+    res.send('<h1>Hello World !</h1><br><a href="/index?name=toto" >Query request</a></h1><br><a href="/index/name/toto" >Pretty request</a>');
 });
 
 // using query
