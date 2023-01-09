@@ -20,6 +20,11 @@ app.get('/style', (req, res) => {
     res.sendFile('views/test.html', { root: __dirname })
 });
 
+// Send message for default URL
+app.get('/request', (req, res) => {
+    res.send(req)
+});
+
 // Manage bad route
 app.use(function (req, res, next) {
     res.setHeader('Content-Type', 'text/plain');

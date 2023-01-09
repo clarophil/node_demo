@@ -24,12 +24,6 @@ app.get('/login/:user', (req, res) => {
 	res.redirect('/');
 });
 
-// Show user session
-app.get('/test', (req, res) => {
-    console.log(req.session);
-    res.send('hello session ' + req.session.user);
-    });
-
 // Logout endpoint
 app.get('/logout', function (req, res) {
 	req.session.destroy();
@@ -40,9 +34,9 @@ app.get('/logout', function (req, res) {
 // Send message for default URL
 app.get('/', (req, res) => {
 	if(req.session.user) {
-		res.send('Hello ' + req.session.user );
+		res.send('Hello ' + req.session.user + ' <a href="/logout">Logout</a>' );
 	}
-	else res.send('Hello anonymous !');
+	else res.send('Hello anonymous ! <a href="/login/toto">Login toto</a> '); 
 } )
 // Launch app to listen to specified port
 app.listen(port, function () {
