@@ -11,7 +11,7 @@ let port = 8000;
 let listname = ["Paul", "Pierre"];
 
 // Import body parser
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true}));
 
 // Form
 app.get( '/',(request, response) => {

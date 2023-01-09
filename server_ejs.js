@@ -5,7 +5,7 @@ let express = require('express');
 let app = express();
 
 // Import body parser
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 // Setup server port
 var port = process.env.PORT || 8000;
