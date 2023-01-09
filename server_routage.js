@@ -6,7 +6,7 @@ let bodyParser = require('body-parser');
 let app = express();
 
 // Setup server port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8000;
 
 app.get('/', function(req, res) {
     res.setHeader('Content-Type', 'text/plain');
