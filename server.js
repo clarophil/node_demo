@@ -22,7 +22,7 @@ app.get('/style', (req, res) => {
 
 // Send message for default URL
 app.get('/request', (req, res) => {
-    res.send(req)
+    res.send(JSON.stringify(req, null, 2) )
 });
 
 // Manage bad route
