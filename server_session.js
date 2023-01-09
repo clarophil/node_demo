@@ -21,7 +21,7 @@ app.use(session({
 app.get('/login/:user', (req, res) => {
 	req.session.user = req.params.user ;
 	console.log(req.session);
-	res.send('Hello ' + req.session.user);
+	res.redirect('/');
 });
 
 // Show user session
