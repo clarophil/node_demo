@@ -11,13 +11,7 @@ let port = 8000;
 let listname = ["Paul", "Pierre"];
 
 // Import body parser
-let bodyParser = require('body-parser')
- 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
- 
-// parse application/json
-app.use(bodyParser.json())
+app.use(express.urlencoded());
 
 // Form
 app.get( '/',(request, response) => {
