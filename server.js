@@ -15,14 +15,20 @@ app.get('/', (req, res) => {
 //setting static files
 app.use(express.static('public'));
 
-// Send message for default URL
+// Send static files
 app.get('/style', (req, res) => {
-    res.sendFile('views/test.html', { root: __dirname })
+    res.sendFile('views/test.html', { root: __dirname });
 });
 
-// Send message for default URL
-app.get('/request', (req, res) => {
-    res.send(JSON.stringify(req, null, 2) )
+// Send dynamic response
+app.get('/dynamic', (req, res) => {
+    let date_ob = new Date();// current hours
+    let hours = date_ob.getHours();
+    // current minutes
+    let minutes = date_ob.getMinutes();
+    // current seconds
+    let seconds = date_ob.getSeconds();
+    res.send('<h1>Hello World ! ' + hours + '-' + minutes + '-' + seconds +' </h1>');
 });
 
 // Manage bad route
