@@ -1,9 +1,11 @@
 // Import express
 let express = require('express');
-// Import Body parser
-let bodyParser = require('body-parser');
+
 // Initialize the app
 let app = express();
+
+// Import body parser
+app.use(express.urlencoded());
 
 // Setup server port
 var port = process.env.PORT || 8000;
