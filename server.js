@@ -28,7 +28,7 @@ app.get('/dynamic', (req, res) => {
     let minutes = date_ob.getMinutes();
     // current seconds
     let seconds = date_ob.getSeconds();
-    res.send('<h1>Hello World ! ' + hours + '-' + minutes + '-' + seconds +' </h1>');
+    res.send('<h1>Hello World ! ' + hours + ':' + minutes + ':' + seconds +' </h1>');
 });
 
 // Manage bad route
