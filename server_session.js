@@ -38,8 +38,12 @@ app.get('/logout', function (req, res) {
 
 
 // Send message for default URL
-app.get('/', (req, res) => res.send('Hello World !'));
-
+app.get('/', (req, res) => {
+	if(req.session.user) {
+		res.send('Hello ' + req.session.user );
+	}
+	else res.send('Hello anonymous !');
+} )
 // Launch app to listen to specified port
 app.listen(port, function () {
     console.log("Runnings on port " + port);
